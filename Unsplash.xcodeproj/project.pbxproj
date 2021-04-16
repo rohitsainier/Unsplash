@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		22834BBD2629D8EC00090032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22834BBC2629D8EC00090032 /* AppDelegate.swift */; };
-		22834BBF2629D8EC00090032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22834BBE2629D8EC00090032 /* SceneDelegate.swift */; };
 		22834BC12629D8EC00090032 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22834BC02629D8EC00090032 /* ViewController.swift */; };
 		22834BC42629D8EC00090032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22834BC22629D8EC00090032 /* Main.storyboard */; };
 		22834BC62629D8EE00090032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22834BC52629D8EE00090032 /* Assets.xcassets */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		22834BB92629D8EC00090032 /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22834BBC2629D8EC00090032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22834BBE2629D8EC00090032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		22834BC02629D8EC00090032 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22834BC32629D8EC00090032 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22834BC52629D8EE00090032 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				22834BBC2629D8EC00090032 /* AppDelegate.swift */,
-				22834BBE2629D8EC00090032 /* SceneDelegate.swift */,
 				22834BC02629D8EC00090032 /* ViewController.swift */,
 				22834BC22629D8EC00090032 /* Main.storyboard */,
 				22834BC52629D8EE00090032 /* Assets.xcassets */,
@@ -260,7 +257,6 @@
 			files = (
 				22834BC12629D8EC00090032 /* ViewController.swift in Sources */,
 				22834BBD2629D8EC00090032 /* AppDelegate.swift in Sources */,
-				22834BBF2629D8EC00090032 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Q233F3ZPX;
 				INFOPLIST_FILE = Unsplash/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +455,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Q233F3ZPX;
 				INFOPLIST_FILE = Unsplash/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
