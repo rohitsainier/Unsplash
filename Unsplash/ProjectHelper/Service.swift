@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SainiUtils
 
 
 //MARK:- Protocol
@@ -32,6 +33,7 @@ enum EndpointKinds {
             // In this example we're telling URLSession not to
             // use any locally cached data for these requests:
             request.cachePolicy = .reloadIgnoringLocalCacheData
+            request.addValue("Client-ID VnqJx6T8KErO0qmSsuTEQKvJd6T1pyO1_sGe9Hb5L28", forHTTPHeaderField: "Authorization")
         }
     }
     //Post Request
@@ -41,7 +43,6 @@ enum EndpointKinds {
             request.httpBody = data
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "content-type")
-            request.addValue("Client-ID VnqJx6T8KErO0qmSsuTEQKvJd6T1pyO1_sGe9Hb5L28", forHTTPHeaderField: "Authorization")
         }
     }
 }
@@ -52,7 +53,7 @@ struct Endpoint<Kind: EndpointKind, Response: Decodable> {
     var queryItems = [URLQueryItem]()
 }
 //Extending the Endpoint for TypeSafety
-extension Endpoint where Kind == EndpointKinds.GET, Response == Photo {
+extension Endpoint where Kind == EndpointKinds.GET, Response == [Photo] {
     static var photos: Self {
         Endpoint(path: "/photos")
     }
@@ -104,8 +105,12 @@ extension URLSession{
                 handler(.failure(err))
             }
             else{
-                let response = try! decoder.decode(Response.self, from: data!)
+                log.ln("prettyJSON Start \n")/
+                log.result("\(String(describing: data?.sainiPrettyJSON))")/
+                log.ln("prettyJSON End \n")/
+                if let response = try? decoder.decode(Response.self, from: data!){
                 handler(.success(response))
+                }
             }
         }
         task.resume()
