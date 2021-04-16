@@ -31,6 +31,8 @@
 		886733337CA1AB12CC74F609 /* Pods_Unsplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1FA148823F9DAF398BDE91 /* Pods_Unsplash.framework */; };
 		DC92970B2629E6BA00EC7ED8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92970A2629E6BA00EC7ED8 /* Service.swift */; };
 		DC9297172629EAFB00EC7ED8 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297162629EAFB00EC7ED8 /* Photos.swift */; };
+		DC92971C2629EC7300EC7ED8 /* PhotoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92971B2629EC7300EC7ED8 /* PhotoListVC.swift */; };
+		DC9297212629ECD700EC7ED8 /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297202629ECD700EC7ED8 /* PhotoListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		D0BD1F1C7A470603233031D3 /* Pods-Unsplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash.release.xcconfig"; path = "Target Support Files/Pods-Unsplash/Pods-Unsplash.release.xcconfig"; sourceTree = "<group>"; };
 		DC92970A2629E6BA00EC7ED8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		DC9297162629EAFB00EC7ED8 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Photos.swift; path = Unsplash/ProjectHelper/Photos.swift; sourceTree = SOURCE_ROOT; };
+		DC92971B2629EC7300EC7ED8 /* PhotoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoListVC.swift; path = Unsplash/ProjectHelper/PhotoListVC.swift; sourceTree = SOURCE_ROOT; };
+		DC9297202629ECD700EC7ED8 /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoListViewModel.swift; path = Unsplash/ProjectHelper/PhotoListViewModel.swift; sourceTree = SOURCE_ROOT; };
 		EEF34327CA584C6903DD451F /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash-UnsplashUITests.debug.xcconfig"; path = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +201,7 @@
 		22834C0B2629DFFD00090032 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DC92971B2629EC7300EC7ED8 /* PhotoListVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 		22834C0C2629E00300090032 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DC9297202629ECD700EC7ED8 /* PhotoListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -544,6 +550,8 @@
 				DC9297172629EAFB00EC7ED8 /* Photos.swift in Sources */,
 				22834BBD2629D8EC00090032 /* AppDelegate.swift in Sources */,
 				DC92970B2629E6BA00EC7ED8 /* Service.swift in Sources */,
+				DC9297212629ECD700EC7ED8 /* PhotoListViewModel.swift in Sources */,
+				DC92971C2629EC7300EC7ED8 /* PhotoListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
