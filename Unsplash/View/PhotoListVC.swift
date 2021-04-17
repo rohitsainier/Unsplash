@@ -9,6 +9,11 @@ import UIKit
 
 class PhotoListVC: UIViewController {
 
+    
+    //OUTLETS
+    @IBOutlet weak var topImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

