@@ -108,9 +108,17 @@ extension URLSession{
                 log.ln("prettyJSON Start \n")/
                 log.result("\(String(describing: data?.sainiPrettyJSON))")/
                 log.ln("prettyJSON End \n")/
-                if let response = try? decoder.decode(Response.self, from: data!){
-                handler(.success(response))
+                
+                if data != nil{ //if response is not empty
+                    do {
+                        let response = try JSONDecoder().decode(Response.self, from: data!) // decode the response into model
+                        handler(.success(response))
+                    }
+                    catch let err {
+                        log.error("ERROR OCCURED WHILE DECODING: \(Log.stats()) \(err)")/
+                    }
                 }
+                
             }
         }
         task.resume()
