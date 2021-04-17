@@ -14,6 +14,7 @@ class PhotoListVC: UIViewController {
     @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
+    private var photoListVM: PhotoListViewModel = PhotoListViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +25,16 @@ class PhotoListVC: UIViewController {
     
     //MARK:- configUI
     private func configUI(){
+        //loading initial photos
+        photoListVM.loadPhotos(using: .shared)
+        
+        //Observing photos
+        photoListVM.photosList.bind { [weak self](_) in
+            guard let `self` = self else { return }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
         tableView.register(UINib(nibName: TABLE_VIEW_CELL.PhotoCell.rawValue, bundle: nil), forCellReuseIdentifier: TABLE_VIEW_CELL.PhotoCell.rawValue)
     }
 
@@ -33,12 +44,12 @@ class PhotoListVC: UIViewController {
 extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
     // heightForRowAt
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.row % 2 == 0 ? 205 : 408
+        return photoListVM.PhotoSize(index: indexPath)
     }
     
     // numberOfRowsInSection
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return photoListVM.photosList.value.count
     }
     
     // cellForRowAt
