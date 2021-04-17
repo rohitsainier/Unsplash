@@ -72,8 +72,8 @@
                                 <color key="textColor" name="white"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BmV-VL-7s2">
-                                <rect key="frame" x="0.0" y="276" width="414" height="620"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BmV-VL-7s2">
+                                <rect key="frame" x="16" y="276" width="382" height="620"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="2Vo-oH-pVg"/>
@@ -85,7 +85,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2HB-0N-otj" firstAttribute="top" secondItem="fl0-sI-NTx" secondAttribute="bottom" id="1C8-Al-1sH"/>
-                            <constraint firstItem="BmV-VL-7s2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8eA-ZB-LvS"/>
+                            <constraint firstItem="BmV-VL-7s2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8eA-ZB-LvS"/>
                             <constraint firstAttribute="bottom" secondItem="BmV-VL-7s2" secondAttribute="bottom" id="HIE-1i-XnJ"/>
                             <constraint firstItem="P3L-71-JSB" firstAttribute="top" secondItem="A57-en-DDN" secondAttribute="bottom" constant="8" id="Hdr-uo-wUV"/>
                             <constraint firstItem="fl0-sI-NTx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JLU-C9-ljF"/>
@@ -95,7 +95,7 @@
                             <constraint firstItem="BmV-VL-7s2" firstAttribute="top" secondItem="2HB-0N-otj" secondAttribute="bottom" id="csK-aa-yvE"/>
                             <constraint firstItem="P3L-71-JSB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="erW-tr-Msh"/>
                             <constraint firstItem="fl0-sI-NTx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="okk-J7-9N5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BmV-VL-7s2" secondAttribute="trailing" id="tuY-cJ-0WK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BmV-VL-7s2" secondAttribute="trailing" constant="16" id="tuY-cJ-0WK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fl0-sI-NTx" secondAttribute="trailing" id="yM2-yl-ZpA"/>
                             <constraint firstItem="A57-en-DDN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zkS-0o-JMQ"/>
                         </constraints>

@@ -35,6 +35,8 @@
 		DC9297452629F5B400EC7ED8 /* PhotoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297442629F5B400EC7ED8 /* PhotoListVC.swift */; };
 		DC929795262B529C00EC7ED8 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC929793262B529C00EC7ED8 /* PhotoCell.swift */; };
 		DC929796262B529C00EC7ED8 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC929794262B529C00EC7ED8 /* PhotoCell.xib */; };
+		DC92979B262B53FC00EC7ED8 /* AppEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92979A262B53FC00EC7ED8 /* AppEnum.swift */; };
+		DC9297A1262B586800EC7ED8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297A0262B586800EC7ED8 /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		DC9297442629F5B400EC7ED8 /* PhotoListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListVC.swift; sourceTree = "<group>"; };
 		DC929793262B529C00EC7ED8 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		DC929794262B529C00EC7ED8 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		DC92979A262B53FC00EC7ED8 /* AppEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnum.swift; sourceTree = "<group>"; };
+		DC9297A0262B586800EC7ED8 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		EEF34327CA584C6903DD451F /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash-UnsplashUITests.debug.xcconfig"; path = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				DC92970A2629E6BA00EC7ED8 /* Service.swift */,
+				DC92979A262B53FC00EC7ED8 /* AppEnum.swift */,
+				DC9297A0262B586800EC7ED8 /* Utility.swift */,
 			);
 			path = ProjectHelper;
 			sourceTree = "<group>";
@@ -564,7 +570,9 @@
 			files = (
 				22834BBD2629D8EC00090032 /* AppDelegate.swift in Sources */,
 				DC92970B2629E6BA00EC7ED8 /* Service.swift in Sources */,
+				DC92979B262B53FC00EC7ED8 /* AppEnum.swift in Sources */,
 				DC9297452629F5B400EC7ED8 /* PhotoListVC.swift in Sources */,
+				DC9297A1262B586800EC7ED8 /* Utility.swift in Sources */,
 				DC9297352629F56200EC7ED8 /* Photos.swift in Sources */,
 				DC929795262B529C00EC7ED8 /* PhotoCell.swift in Sources */,
 				DC92973D2629F5A000EC7ED8 /* PhotoListViewModel.swift in Sources */,
