@@ -55,6 +55,8 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
     // cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TABLE_VIEW_CELL.PhotoCell.rawValue, for: indexPath) as? PhotoCell else { return UITableViewCell() }
+        cell.picture.downloadCachedImage(placeholder: "", urlString: photoListVM.photosList.value[indexPath.row].urls?.thumb ?? "")
+        cell.profilePic.downloadCachedImage(placeholder: "", urlString: photoListVM.photosList.value[indexPath.row].user?.profileImage?.small ?? "")
         return cell
     }
     

@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Photo
 struct Photo: Codable {
-    let id, photoDescription: String
+    let id, photoDescription: String?
     let user: User?
     let urls: Urls?
 
