@@ -15,6 +15,7 @@ class PhotoListVC: UIViewController {
     
     private let refreshControl = UIRefreshControl()
     private var photoListVM: PhotoListViewModel = PhotoListViewModel()
+    private var page = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class PhotoListVC: UIViewController {
     //MARK:- configUI
     private func configUI(){
         //loading initial photos
-        photoListVM.loadPhotos(using: .shared)
+        photoListVM.loadPhotos(using: .shared, page: page)
         photoListVM.loadRandomPhoto(using: .shared)
         
         //Observing photos
@@ -64,7 +65,9 @@ class PhotoListVC: UIViewController {
     //MARK: - refreshData
     @objc func refreshData(_ sender: Any) {
         //loading initial photos
-        photoListVM.loadPhotos(using: .shared)
+        page = 1
+        photoListVM.photosList.value.removeAll()
+        photoListVM.loadPhotos(using: .shared, page: page)
         photoListVM.loadRandomPhoto(using: .shared)
     }
 
@@ -100,9 +103,18 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
     // didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-   
+    
+    //willDisplay
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if photoListVM.photosList.value.count - 10 == indexPath.row {
+            page = page + 1
+            photoListVM.loadPhotos(using: .shared, page: page)
+        }
+    }
+    
 }

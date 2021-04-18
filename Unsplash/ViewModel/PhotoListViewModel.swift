@@ -12,7 +12,7 @@ protocol PhotoListDelegate {
     var photosList: Box<[Photo]> { get }
     var randomPicture: Box<Photo?> { get }
     func PhotoSize(index: IndexPath) -> CGFloat
-    func loadPhotos(using session: URLSession)
+    func loadPhotos(using session: URLSession,page:Int)
     func loadRandomPhoto(using session: URLSession)
 }
 
@@ -27,12 +27,12 @@ struct PhotoListViewModel:PhotoListDelegate{
     }
     
     //MARK: - loadPhotos
-    func loadPhotos(using session: URLSession) {
-        session.request(.photos, using: Void()) { (result) in
+    func loadPhotos(using session: URLSession,page:Int) {
+        session.request(.photos(page: page), using: Void()) { (result) in
             switch result{
             case .success(let response):
                 print(response)
-                photosList.value = response
+                photosList.value += response
             case .failure(let err):
                 print(err)
             }

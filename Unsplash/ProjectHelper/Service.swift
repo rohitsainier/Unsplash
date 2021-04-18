@@ -54,8 +54,8 @@ struct Endpoint<Kind: EndpointKind, Response: Decodable> {
 }
 //Extending the Endpoint for TypeSafety
 extension Endpoint where Kind == EndpointKinds.GET, Response == [Photo] {
-    static var photos: Self {
-        Endpoint(path: "/photos")
+    static func photos(page:Int) -> Self {
+        Endpoint(path: "/photos",queryItems: [URLQueryItem(name: "page", value: String(page)),URLQueryItem(name: "per_page", value: "30")])
     }
 }
 extension Endpoint where Kind == EndpointKinds.GET, Response == Photo {
