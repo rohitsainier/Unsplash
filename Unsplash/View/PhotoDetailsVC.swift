@@ -26,7 +26,7 @@ class PhotoDetailsVC: UIViewController {
     }
     private func configUI(){
         guard let photo = photo else{return}
-        picture.downloadCachedImage(placeholder: "", urlString: photo.urls?.small ?? "")
+        picture.downloadCachedImage(placeholder: "", urlString: photo.urls?.regular ?? "")
         locationLbl.text = photo.user?.location
         profilePic.downloadCachedImage(placeholder: "", urlString: photo.user?.profileImage?.small ?? "")
         usernameLbl.text = photo.user?.name

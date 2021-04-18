@@ -36,27 +36,24 @@ class RoundedImageView: UIImageView {
 //MARK: - downloadCachedImage
 extension UIImageView{
     func downloadCachedImage(placeholder: String,urlString: String){
-        //self.sainiShowLoader(loaderColor:  UIColor.AppColor)
-        let options: SDWebImageOptions = [.scaleDownLargeImages, .continueInBackground, .avoidAutoSetImage]
+        let options: SDWebImageOptions = [.progressiveDownload]
         let placeholder = UIImage(named: placeholder)
-        self.sd_setImage(with: URL(string: urlString), placeholderImage: placeholder, options: options) { (image, _, cacheType,_ ) in
-            self.sainiRemoveLoader()
-            guard image != nil else {
-                //self.sainiRemoveLoader()
-                return
-            }
-            guard cacheType != .memory, cacheType != .disk else {
+        DispatchQueue.global().async {
+            self.sd_setImage(with: URL(string: urlString), placeholderImage: placeholder, options: options) { (image, _, cacheType,_ ) in
+                guard image != nil else {
+                    return
+                }
+                guard cacheType != .memory, cacheType != .disk else {
+                    DispatchQueue.main.async {
+                        self.image = image
+                    }
+                    return
+                }
                 DispatchQueue.main.async {
                     self.image = image
-                    //self.sainiRemoveLoader()
                 }
                 return
             }
-            DispatchQueue.main.async {
-                self.image = image
-                //self.sainiRemoveLoader()
-            }
-            return
         }
     }
 }

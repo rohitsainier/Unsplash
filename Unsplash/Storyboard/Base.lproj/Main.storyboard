@@ -131,7 +131,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYl-rH-O5e">
-                                <rect key="frame" x="56" y="499.5" width="61.5" height="16.5"/>
+                                <rect key="frame" x="56" y="499.5" width="342" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <color key="textColor" name="black_87"/>
                                 <nil key="highlightedColor"/>
@@ -164,6 +164,7 @@
                         <constraints>
                             <constraint firstItem="ump-eP-qoe" firstAttribute="top" secondItem="wNg-yE-ozN" secondAttribute="bottom" constant="14" id="2uL-Oh-pQ6"/>
                             <constraint firstItem="ump-eP-qoe" firstAttribute="leading" secondItem="Urc-L6-fuL" secondAttribute="leading" constant="16" id="3mX-yd-JLQ"/>
+                            <constraint firstItem="Urc-L6-fuL" firstAttribute="trailing" secondItem="mYl-rH-O5e" secondAttribute="trailing" constant="16" id="5rF-Dk-y3D"/>
                             <constraint firstItem="mYl-rH-O5e" firstAttribute="centerY" secondItem="TMk-uw-8Rk" secondAttribute="centerY" id="7hH-ua-kdy"/>
                             <constraint firstItem="0np-DM-f99" firstAttribute="centerY" secondItem="sMx-yM-hJD" secondAttribute="centerY" id="7jt-rP-tWJ"/>
                             <constraint firstItem="Urc-L6-fuL" firstAttribute="trailing" secondItem="ump-eP-qoe" secondAttribute="trailing" constant="16" id="GEL-Fd-7bL"/>
