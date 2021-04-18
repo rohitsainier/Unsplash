@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK:- TABLE_VIEW_CELL
 enum TABLE_VIEW_CELL:String{
@@ -21,4 +22,6 @@ struct DecodeDefaultValues{
         static let double = 0.0
     }
 }
+
+
 

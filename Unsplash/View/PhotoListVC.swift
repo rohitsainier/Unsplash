@@ -13,7 +13,9 @@ class PhotoListVC: UIViewController {
     //OUTLETS
     @IBOutlet weak var tableView: UITableView!
     
+    private let refreshControl = UIRefreshControl()
     private var photoListVM: PhotoListViewModel = PhotoListViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +34,7 @@ class PhotoListVC: UIViewController {
         photoListVM.photosList.bind { [weak self](_) in
             guard let `self` = self else { return }
             DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
                 self.tableView.reloadData()
             }
         }
@@ -39,10 +42,30 @@ class PhotoListVC: UIViewController {
         photoListVM.randomPicture.bind { [weak self](_) in
             guard let `self` = self else { return }
             DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
                 self.tableView.reloadData()
             }
         }
         tableView.register(UINib(nibName: TABLE_VIEW_CELL.PhotoCell.rawValue, bundle: nil), forCellReuseIdentifier: TABLE_VIEW_CELL.PhotoCell.rawValue)
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        // Configure Refresh Control
+        refreshControl.addTarget(self, action: #selector(refreshData(_ :)), for: .valueChanged)
+        refreshControl.tintColor = UIColor.AppColor
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing...")
+    }
+    
+    //MARK: - refreshData
+    @objc func refreshData(_ sender: Any) {
+        //loading initial photos
+        photoListVM.loadPhotos(using: .shared)
+        photoListVM.loadRandomPhoto(using: .shared)
     }
 
 }

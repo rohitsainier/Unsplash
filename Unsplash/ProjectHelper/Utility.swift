@@ -58,3 +58,8 @@ extension UIImageView{
         }
     }
 }
+
+//MARK:- AppColor
+extension UIColor {
+    static var AppColor: UIColor  { return UIColor(red: 129/255, green: 213/255, blue: 216/255, alpha: 1) }
+}
