@@ -28,9 +28,10 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eF2-Zz-MDJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="251"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOSPLASH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aox-E1-Hgl">
-                        <rect key="frame" x="66.5" y="58" width="187" height="41"/>
+                        <rect key="frame" x="69.5" y="58" width="181.5" height="41"/>
                         <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="35"/>
                         <color key="textColor" name="white"/>
                         <nil key="highlightedColor"/>

@@ -4,10 +4,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -18,12 +23,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itn-F3-Gr9">
+                        <rect key="frame" x="115.5" y="46.5" width="89" height="23.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="el5-Hf-Ym8">
                         <rect key="frame" x="16" y="8" width="288" height="108"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FU1-16-n3G" customClass="RoundedImageView" customModule="Unsplash" customModuleProvider="target">
                         <rect key="frame" x="264" y="76" width="32" height="32"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" name="seafoam_blue"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="k71-dQ-VhV"/>
                             <constraint firstAttribute="width" constant="32" id="nZ5-n6-fsn"/>
@@ -32,6 +43,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="el5-Hf-Ym8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="C2b-70-WIg"/>
+                    <constraint firstItem="itn-F3-Gr9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CHb-PX-Jsm"/>
+                    <constraint firstItem="itn-F3-Gr9" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="JZS-Gg-sML"/>
                     <constraint firstAttribute="bottom" secondItem="el5-Hf-Ym8" secondAttribute="bottom" id="JzE-rT-SyY"/>
                     <constraint firstAttribute="bottom" secondItem="FU1-16-n3G" secondAttribute="bottom" constant="8" id="ReO-I6-yso"/>
                     <constraint firstAttribute="trailing" secondItem="el5-Hf-Ym8" secondAttribute="trailing" constant="16" id="fzd-jL-1HI"/>
@@ -48,8 +61,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="seafoam_blue">
+            <color red="0.50599998235702515" green="0.83499997854232788" blue="0.84700000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

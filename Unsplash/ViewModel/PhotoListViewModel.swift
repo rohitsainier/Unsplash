@@ -28,26 +28,31 @@ struct PhotoListViewModel:PhotoListDelegate{
     
     //MARK: - loadPhotos
     func loadPhotos(using session: URLSession,page:Int) {
-        session.request(.photos(page: page), using: Void()) { (result) in
-            switch result{
-            case .success(let response):
-                print(response)
-                photosList.value += response
-            case .failure(let err):
-                print(err)
+        DispatchQueue.global(qos: .utility).async {
+            session.request(.photos(page: page), using: Void()) { (result) in
+                switch result{
+                case .success(let response):
+                    print(response)
+                    photosList.value += response
+                case .failure(let err):
+                    print(err)
+                }
             }
         }
     }
     
     func loadRandomPhoto(using session: URLSession) {
-        session.request(.random, using: Void()) { (result) in
-            switch result{
-            case .success(let response):
-                print(response)
-                randomPicture.value = response
-            case .failure(let err):
-                print(err)
+        DispatchQueue.global(qos: .utility).async{
+            session.request(.random, using: Void()) { (result) in
+                switch result{
+                case .success(let response):
+                    print(response)
+                    randomPicture.value = response
+                case .failure(let err):
+                    print(err)
+                }
             }
+            
         }
     }
     
