@@ -16,12 +16,17 @@ class PhotoCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        configUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    private func configUI(){
+        profilePic.layer.borderWidth = 2
+        profilePic.layer.borderColor = UIColor.white.cgColor
     }
     
 }
