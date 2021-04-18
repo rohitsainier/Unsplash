@@ -9,7 +9,7 @@ import Foundation
 
 //MARK:- TABLE_VIEW_CELL
 enum TABLE_VIEW_CELL:String{
-    case PhotoCell
+    case PhotoCell,RandomPhotoCell
 }
 
 //MARK:- DocumentDefaultValues

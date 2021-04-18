@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="el5-Hf-Ym8">
-                        <rect key="frame" x="0.0" y="8" width="320" height="108"/>
+                        <rect key="frame" x="16" y="8" width="288" height="108"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FU1-16-n3G" customClass="RoundedImageView" customModule="Unsplash" customModuleProvider="target">
-                        <rect key="frame" x="280" y="76" width="32" height="32"/>
+                        <rect key="frame" x="264" y="76" width="32" height="32"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="k71-dQ-VhV"/>
@@ -31,11 +31,11 @@
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="el5-Hf-Ym8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="C2b-70-WIg"/>
+                    <constraint firstItem="el5-Hf-Ym8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="C2b-70-WIg"/>
                     <constraint firstAttribute="bottom" secondItem="el5-Hf-Ym8" secondAttribute="bottom" id="JzE-rT-SyY"/>
                     <constraint firstAttribute="bottom" secondItem="FU1-16-n3G" secondAttribute="bottom" constant="8" id="ReO-I6-yso"/>
-                    <constraint firstAttribute="trailing" secondItem="el5-Hf-Ym8" secondAttribute="trailing" id="fzd-jL-1HI"/>
-                    <constraint firstAttribute="trailing" secondItem="FU1-16-n3G" secondAttribute="trailing" constant="8" id="jvD-hq-ifd"/>
+                    <constraint firstAttribute="trailing" secondItem="el5-Hf-Ym8" secondAttribute="trailing" constant="16" id="fzd-jL-1HI"/>
+                    <constraint firstAttribute="trailing" secondItem="FU1-16-n3G" secondAttribute="trailing" constant="24" id="jvD-hq-ifd"/>
                     <constraint firstItem="el5-Hf-Ym8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="mG0-RU-ddR"/>
                 </constraints>
             </tableViewCellContentView>

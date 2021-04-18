@@ -11,7 +11,6 @@ class PhotoListVC: UIViewController {
 
     
     //OUTLETS
-    @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     private var photoListVM: PhotoListViewModel = PhotoListViewModel()
@@ -40,7 +39,7 @@ class PhotoListVC: UIViewController {
         photoListVM.randomPicture.bind { [weak self](_) in
             guard let `self` = self else { return }
             DispatchQueue.main.async {
-                self.topImageView.downloadCachedImage(placeholder: "", urlString: self.photoListVM.randomPicture.value?.urls?.small ?? "")
+                self.tableView.reloadData()
             }
         }
         tableView.register(UINib(nibName: TABLE_VIEW_CELL.PhotoCell.rawValue, bundle: nil), forCellReuseIdentifier: TABLE_VIEW_CELL.PhotoCell.rawValue)
@@ -50,6 +49,16 @@ class PhotoListVC: UIViewController {
 
 //MARK: - UITableView DataSource and Delegate Methods
 extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 176
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = Bundle.main.loadNibNamed(TABLE_VIEW_CELL.RandomPhotoCell.rawValue, owner: self, options: nil)?.first as? RandomPhotoCell else {
+            return UIView()
+        }
+        headerView.randomPhoto.downloadCachedImage(placeholder: "", urlString: photoListVM.randomPicture.value?.urls?.small ?? "")
+        return headerView
+    }
     // heightForRowAt
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return photoListVM.PhotoSize(index: indexPath)

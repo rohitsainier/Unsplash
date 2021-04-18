@@ -38,6 +38,8 @@
 		DC92979B262B53FC00EC7ED8 /* AppEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC92979A262B53FC00EC7ED8 /* AppEnum.swift */; };
 		DC9297A1262B586800EC7ED8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297A0262B586800EC7ED8 /* Utility.swift */; };
 		DC9297A6262B5C8F00EC7ED8 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297A5262B5C8F00EC7ED8 /* Binding.swift */; };
+		DC9297AC262BFD1300EC7ED8 /* RandomPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297AA262BFD1300EC7ED8 /* RandomPhotoCell.swift */; };
+		DC9297AD262BFD1300EC7ED8 /* RandomPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9297AB262BFD1300EC7ED8 /* RandomPhotoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		DC92979A262B53FC00EC7ED8 /* AppEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnum.swift; sourceTree = "<group>"; };
 		DC9297A0262B586800EC7ED8 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		DC9297A5262B5C8F00EC7ED8 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		DC9297AA262BFD1300EC7ED8 /* RandomPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoCell.swift; sourceTree = "<group>"; };
+		DC9297AB262BFD1300EC7ED8 /* RandomPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomPhotoCell.xib; sourceTree = "<group>"; };
 		EEF34327CA584C6903DD451F /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash-UnsplashUITests.debug.xcconfig"; path = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -296,6 +300,8 @@
 			children = (
 				DC929793262B529C00EC7ED8 /* PhotoCell.swift */,
 				DC929794262B529C00EC7ED8 /* PhotoCell.xib */,
+				DC9297AA262BFD1300EC7ED8 /* RandomPhotoCell.swift */,
+				DC9297AB262BFD1300EC7ED8 /* RandomPhotoCell.xib */,
 			);
 			path = "Xib's";
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 				22834C302629E31E00090032 /* Roboto-BlackItalic.ttf in Resources */,
 				22834C322629E31E00090032 /* Roboto-Thin.ttf in Resources */,
 				22834C282629E31E00090032 /* Roboto-Light.ttf in Resources */,
+				DC9297AD262BFD1300EC7ED8 /* RandomPhotoCell.xib in Resources */,
 				22834C2B2629E31E00090032 /* Roboto-ThinItalic.ttf in Resources */,
 				22834C332629E31E00090032 /* Roboto-Black.ttf in Resources */,
 				22834C2A2629E31E00090032 /* Roboto-MediumItalic.ttf in Resources */,
@@ -578,6 +585,7 @@
 				DC9297A6262B5C8F00EC7ED8 /* Binding.swift in Sources */,
 				DC9297A1262B586800EC7ED8 /* Utility.swift in Sources */,
 				DC9297352629F56200EC7ED8 /* Photos.swift in Sources */,
+				DC9297AC262BFD1300EC7ED8 /* RandomPhotoCell.swift in Sources */,
 				DC929795262B529C00EC7ED8 /* PhotoCell.swift in Sources */,
 				DC92973D2629F5A000EC7ED8 /* PhotoListViewModel.swift in Sources */,
 			);
