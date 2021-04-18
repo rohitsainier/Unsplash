@@ -85,8 +85,9 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
         guard let headerView = Bundle.main.loadNibNamed(TABLE_VIEW_CELL.RandomPhotoCell.rawValue, owner: self, options: nil)?.first as? RandomPhotoCell else {
             return UIView()
         }
-        headerView.randomPhoto.downloadCachedImage(placeholder: "", urlString: photoListVM.randomPicture.value?.urls?.small ?? "")
+        headerView.randomPhoto.downloadCachedImage(placeholder: PLACEHOLDER.placeholder.rawValue, urlString: photoListVM.randomPicture.value?.urls?.small ?? DecodeDefaultValues.Empty.string)
         return headerView
+        
     }
     // heightForRowAt
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -101,8 +102,8 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
     // cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TABLE_VIEW_CELL.PhotoCell.rawValue, for: indexPath) as? PhotoCell else { return UITableViewCell() }
-        cell.picture.downloadCachedImage(placeholder: "", urlString: photoListVM.photosList.value[indexPath.row].urls?.regular ?? "")
-        cell.profilePic.downloadCachedImage(placeholder: "", urlString: photoListVM.photosList.value[indexPath.row].user?.profileImage?.small ?? "")
+        cell.picture.downloadCachedImage(placeholder: PLACEHOLDER.placeholder.rawValue, urlString: photoListVM.photosList.value[indexPath.row].urls?.regular ?? DecodeDefaultValues.Empty.string)
+        cell.profilePic.downloadCachedImage(placeholder: PLACEHOLDER.placeholder.rawValue, urlString: photoListVM.photosList.value[indexPath.row].user?.profileImage?.small ?? DecodeDefaultValues.Empty.string)
         return cell
     }
     

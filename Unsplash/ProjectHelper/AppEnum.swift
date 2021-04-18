@@ -49,6 +49,10 @@ struct DecodeDefaultValues{
     }
 }
 
+//MARK:- PLACEHOLDER
+enum PLACEHOLDER:String{
+    case placeholder = "image_placeholder"
+}
 
 
 
