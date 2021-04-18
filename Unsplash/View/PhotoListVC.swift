@@ -36,6 +36,7 @@ class PhotoListVC: UIViewController {
             guard let `self` = self else { return }
             DispatchQueue.main.async {
                 self.refreshControl.endRefreshing()
+                self.tableView.tableFooterView = nil
                 self.tableView.reloadData()
             }
         }
@@ -59,7 +60,7 @@ class PhotoListVC: UIViewController {
         // Configure Refresh Control
         refreshControl.addTarget(self, action: #selector(refreshData(_ :)), for: .valueChanged)
         refreshControl.tintColor = UIColor.AppColor
-        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing...")
+        refreshControl.attributedTitle = NSAttributedString(string: REFRESH_CONTROL.title.rawValue)
     }
     
     //MARK: - refreshData
@@ -75,9 +76,11 @@ class PhotoListVC: UIViewController {
 
 //MARK: - UITableView DataSource and Delegate Methods
 extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
+    //heightForHeaderInSection
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 176
     }
+    //viewForHeaderInSection
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = Bundle.main.loadNibNamed(TABLE_VIEW_CELL.RandomPhotoCell.rawValue, owner: self, options: nil)?.first as? RandomPhotoCell else {
             return UIView()
@@ -111,10 +114,23 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
     
     //willDisplay
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if photoListVM.photosList.value.count - 10 == indexPath.row {
+        if photoListVM.photosList.value.count - 1 == indexPath.row {
             page = page + 1
             photoListVM.loadPhotos(using: .shared, page: page)
+            DispatchQueue.main.async {
+                tableView.tableFooterView = self.spinnerFooter()
+            }
         }
     }
-    
+    //MARK:- SpinnerFooter
+    //Load more spinner
+    private func spinnerFooter() -> UIView?{
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
+        let spinner = UIActivityIndicatorView()
+        spinner.color = UIColor.AppColor
+        spinner.center = footerView.center
+        footerView.addSubview(spinner)
+        spinner.startAnimating()
+        return footerView
+    }
 }

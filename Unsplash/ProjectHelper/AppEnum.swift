@@ -13,6 +13,14 @@ enum TABLE_VIEW_CELL:String{
     case PhotoCell,RandomPhotoCell
 }
 
+enum FOOTER:String{
+    case title = "Loading more photos..."
+}
+
+enum REFRESH_CONTROL:String{
+    case title = "Refreshing..."
+}
+
 //MARK:- DocumentDefaultValues
 struct DecodeDefaultValues{
     struct Empty{
