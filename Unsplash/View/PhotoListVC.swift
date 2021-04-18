@@ -109,7 +109,9 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
     
     // didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc:PhotoDetailsVC = STORYBOARD.Main.load.instantiateViewController(withIdentifier: View_Controllers.PhotoDetailsVC.rawValue) as! PhotoDetailsVC
+        vc.photo = photoListVM.photosList.value[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     //willDisplay

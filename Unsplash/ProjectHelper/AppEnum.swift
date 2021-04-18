@@ -8,15 +8,33 @@
 import Foundation
 import UIKit
 
+//MARK:- STORYBOARD
+enum STORYBOARD{
+    case Main
+    var load: UIStoryboard{
+        switch self {
+        case .Main:
+            return UIStoryboard(name: "Main", bundle: nil)
+        }
+    }
+}
+
+//MARK:- View_Controllers
+enum View_Controllers:String{
+    case PhotoListVC,PhotoDetailsVC
+}
+
 //MARK:- TABLE_VIEW_CELL
 enum TABLE_VIEW_CELL:String{
     case PhotoCell,RandomPhotoCell
 }
 
+//MARK:- FOOTER
 enum FOOTER:String{
     case title = "Loading more photos..."
 }
 
+//MARK:- REFRESH_CONTROL
 enum REFRESH_CONTROL:String{
     case title = "Refreshing..."
 }
@@ -30,6 +48,7 @@ struct DecodeDefaultValues{
         static let double = 0.0
     }
 }
+
 
 
 
