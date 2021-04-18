@@ -27,12 +27,20 @@ class PhotoListVC: UIViewController {
     private func configUI(){
         //loading initial photos
         photoListVM.loadPhotos(using: .shared)
+        photoListVM.loadRandomPhoto(using: .shared)
         
         //Observing photos
         photoListVM.photosList.bind { [weak self](_) in
             guard let `self` = self else { return }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+            }
+        }
+        //Observing random photos
+        photoListVM.randomPicture.bind { [weak self](_) in
+            guard let `self` = self else { return }
+            DispatchQueue.main.async {
+                self.topImageView.downloadCachedImage(placeholder: "", urlString: self.photoListVM.randomPicture.value?.urls?.small ?? "")
             }
         }
         tableView.register(UINib(nibName: TABLE_VIEW_CELL.PhotoCell.rawValue, bundle: nil), forCellReuseIdentifier: TABLE_VIEW_CELL.PhotoCell.rawValue)

@@ -58,6 +58,11 @@ extension Endpoint where Kind == EndpointKinds.GET, Response == [Photo] {
         Endpoint(path: "/photos")
     }
 }
+extension Endpoint where Kind == EndpointKinds.GET, Response == Photo {
+    static var random: Self {
+        Endpoint(path: "/photos/random")
+    }
+}
 
 //Using URLComponents for building URLRequest
 extension Endpoint {

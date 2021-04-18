@@ -10,11 +10,14 @@ import Foundation
 
 protocol PhotoListDelegate {
     var photosList: Box<[Photo]> { get }
+    var randomPicture: Box<Photo?> { get }
     func PhotoSize(index: IndexPath) -> CGFloat
     func loadPhotos(using session: URLSession)
+    func loadRandomPhoto(using session: URLSession)
 }
 
 struct PhotoListViewModel:PhotoListDelegate{
+    var randomPicture: Box<Photo?> = Box(nil)
     var photosList: Box<[Photo]> = Box([])
     
     //MARK:- PhotoSize
@@ -35,4 +38,17 @@ struct PhotoListViewModel:PhotoListDelegate{
             }
         }
     }
+    
+    func loadRandomPhoto(using session: URLSession) {
+        session.request(.random, using: Void()) { (result) in
+            switch result{
+            case .success(let response):
+                print(response)
+                randomPicture.value = response
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
 }

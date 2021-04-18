@@ -68,3 +68,4 @@ struct ProfileImage: Codable {
         small = try values.decodeIfPresent(String.self, forKey: .small) ?? DecodeDefaultValues.Empty.string
     }
 }
+
