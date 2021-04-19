@@ -10,8 +10,10 @@ import Foundation
 
 
 protocol PhotoListDelegate {
+    //PhotoList and randomPicture is Observable object for performing two way binding if needed
     var photosList: Box<[Photo]> { get }
     var randomPicture: Box<Photo?> { get }
+    
     func PhotoSize(index: IndexPath) -> CGFloat
     func loadPhotos(using session: URLSession,page:Int)
     func loadRandomPhoto(using session: URLSession)
