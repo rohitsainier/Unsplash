@@ -48,6 +48,7 @@ class PhotoListVC: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        //Registering cell
         tableView.register(UINib(nibName: TABLE_VIEW_CELL.PhotoCell.rawValue, bundle: nil), forCellReuseIdentifier: TABLE_VIEW_CELL.PhotoCell.rawValue)
         
         // Add Refresh Control to Table View
@@ -102,8 +103,7 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
     // cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TABLE_VIEW_CELL.PhotoCell.rawValue, for: indexPath) as? PhotoCell else { return UITableViewCell() }
-        cell.picture.downloadCachedImage(placeholder: PLACEHOLDER.placeholder.rawValue, urlString: photoListVM.photosList.value[indexPath.row].urls?.regular ?? DecodeDefaultValues.Empty.string)
-        cell.profilePic.downloadCachedImage(placeholder: PLACEHOLDER.placeholder.rawValue, urlString: photoListVM.photosList.value[indexPath.row].user?.profileImage?.small ?? DecodeDefaultValues.Empty.string)
+        cell.render(photo: photoListVM.photosList.value[indexPath.row])
         return cell
     }
     
@@ -117,6 +117,7 @@ extension PhotoListVC: UITableViewDelegate, UITableViewDataSource {
     
     //willDisplay
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //Load more items when we reach end of list
         if photoListVM.photosList.value.count - 1 == indexPath.row {
             page = page + 1
             photoListVM.loadPhotos(using: .shared, page: page)

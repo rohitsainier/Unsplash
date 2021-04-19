@@ -110,6 +110,7 @@ extension URLSession{
                 handler(.failure(err))
             }
             else{
+                //Just for debug purposes
                 log.ln("prettyJSON Start \n")/
                 log.result("\(String(describing: data?.sainiPrettyJSON))")/
                 log.ln("prettyJSON End \n")/

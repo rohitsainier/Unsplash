@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 
+
 protocol PhotoListDelegate {
     var photosList: Box<[Photo]> { get }
     var randomPicture: Box<Photo?> { get }
@@ -28,6 +29,7 @@ struct PhotoListViewModel:PhotoListDelegate{
     
     //MARK: - loadPhotos
     func loadPhotos(using session: URLSession,page:Int) {
+        //We can use default qos here as well
         DispatchQueue.global(qos: .utility).async {
             session.request(.photos(page: page), using: Void()) { (result) in
                 switch result{
@@ -42,6 +44,7 @@ struct PhotoListViewModel:PhotoListDelegate{
     }
     
     func loadRandomPhoto(using session: URLSession) {
+        //We can use default qos here as well
         DispatchQueue.global(qos: .utility).async{
             session.request(.random, using: Void()) { (result) in
                 switch result{

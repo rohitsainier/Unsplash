@@ -24,6 +24,12 @@ class PhotoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    //Render photo data
+    func render(photo:Photo){
+        picture.downloadCachedImage(placeholder: PLACEHOLDER.placeholder.rawValue, urlString: photo.urls?.regular ?? DecodeDefaultValues.Empty.string)
+        profilePic.downloadCachedImage(placeholder: PLACEHOLDER.placeholder.rawValue, urlString: photo.user?.profileImage?.small ?? DecodeDefaultValues.Empty.string)
+    }
     private func configUI(){
         profilePic.layer.borderWidth = 2
         profilePic.layer.borderColor = UIColor.white.cgColor

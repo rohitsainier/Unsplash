@@ -33,16 +33,21 @@ class RoundedImageView: UIImageView {
 }
 
 
-//MARK: - downloadCachedImage
+//MARK: - UIImageView
 extension UIImageView{
+    //MARK: - downloadCachedImage
     func downloadCachedImage(placeholder: String,urlString: String){
-        let options: SDWebImageOptions = [.progressiveDownload]
+        //Progressive Download
+        //This flag enables progressive download, the image is displayed progressively during download as a browser would do. By default, the image is only displayed once completely downloaded.
+        //so this flag provide a better experience to end user
+        let options: SDWebImageOptions = [.progressiveDownload,.scaleDownLargeImages]
         let placeholder = UIImage(named: placeholder)
         DispatchQueue.global().async {
             self.sd_setImage(with: URL(string: urlString), placeholderImage: placeholder, options: options) { (image, _, cacheType,_ ) in
                 guard image != nil else {
                     return
                 }
+                //Loading cache images for better and fast performace
                 guard cacheType != .memory, cacheType != .disk else {
                     DispatchQueue.main.async {
                         self.image = image
